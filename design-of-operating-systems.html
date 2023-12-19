@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Design of Operating Systems - Eric Weng's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+        .container, .box { text-align: left; }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="design-of-operating-systems.html">Design of Operating Systems</a></li>
+            <!-- Add other navigation links as needed -->
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <article class="wrapper style2">
+        <div class="container">
+            <header>
+                <h2>Design of Operating Systems</h2>
+                <p>A collection of operating system design labs by Eric Weng.</p>
+            </header>
+            <section class="box">
+                <h3>Course Introduction</h3>
+                <p>This course covers fundamental concepts in operating system design, including memory management, process management, and file management.</p>
+            </section>
+
+            <section class="box">
+                <h3>Memory Management</h3>
+                <p>Modify the xv6 virtual memory management to make memory management more efficient includes:</p>
+                <ol>
+                    <li>Copy-on-write forking - This approach minimizes the unused and unneeded memory by delaying the copying of resources until they are actually modified.</li>
+                    <li>Lazy zero-page allocation - This method also helps in reducing the unnecessary usage of memory by allocating memory pages only when they are actually needed.</li>
+                </ol>
+            </section>
+
+            <section class="box">
+                <h3>Process Management</h3>
+                <p>Add threading support to xv6 using clone function where a new process is created and added to a "thread group." In a thread group, processes(threads) share the same memory space and thus need synchronization support. Concurrency control library, such as mutexes and ocnditional variables, is created to coordinate the work of threads and handles issues like data race, lost-wakeup problem, and deadlocks. This lab contains the following implementations:</p>
+                <ol>
+                    <li>A system call "clone()" to create a new thread</li>
+                    <li>A system call "waitpid()" to wait on a specific process ID</li>
+                    <li>Userspace functions "thread_create()" and "thread_wait" to allow users to create and wait on threads.</li>
+                    <li>System calls "park()", "setpark()", and "unpark()" to address lost wakeup problem.</li>
+                    <li>Userspace functions "mutex_init()", "mutex_acquire()", "mutex_release()", "cond_init()", "cond_wait()", and "cond_signal()" to synchronize threading work using the previously defined system calls.</li>
+                </ol>
+            </section>
+
+            <section class="box">
+                <h3>File Management</h3>
+                <p>Provide user isolation and file permission functionalities to xv6. It includes:</p>
+                <ol>
+                    <li>A user system where each process is created with a logical user identifer</li>
+                    <li>A file permission system where each file's access is controled by its owner and permission properties.</li>
+                    <li>A login system where a secure mechanism is implemented for storing and retrieving passwords in xv6.</li>
+                    <li>Create "sudo()" function to temporarily allow a user to execute programs as root. </li>
+                </ol>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style4">
+        <div class="container">
+            <p>© Eric Weng. All rights reserved.</p>
+            <!-- Additional footer content -->
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
