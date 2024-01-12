@@ -72,6 +72,27 @@ input, select, textarea {
 	appearance: none;
 }
 
+
+/* Portfolio images */
+.portfolio-image {
+    width: 240px; /* This makes the image responsive and fit the container */
+    height: 320px; /* This maintains the aspect ratio */
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.project-box {
+    flex: 1 1 auto; /* Grow and shrink as needed */
+    min-height: 200px; /* Set a minimum height */
+    margin: 10px; /* Optional, for spacing */
+    /* Additional styling */
+}
+
+
 /* Basic */
 
 	html {
